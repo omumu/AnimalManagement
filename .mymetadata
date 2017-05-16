@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="axcw"
+  id="myeclipse.1481009918753"
+  context-root="/axcw"
+  j2ee-spec="5.0"
+  archive="axcw.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

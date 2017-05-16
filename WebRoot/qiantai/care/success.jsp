@@ -1,0 +1,113 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ page isELIgnored="false"%>
+<%
+	String path = request.getContextPath();
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3" />
+<meta http-equiv="description" content="This is my page" />
+
+<script type="text/javascript" src="<%=path%>/js/lunbo.js"></script>
+
+<script type="text/javascript">
+	
+</script>
+
+<style type="text/css">
+.c1-bline {
+	border-bottom: #999 1px dashed;
+	border-top: 1px;
+}
+
+.f-right {
+	float: right
+}
+
+.f-left {
+	float: left
+}
+
+.clear {
+	clear: both
+}
+
+#pageCode ul li {
+	float: left;
+}
+
+#pageCode ul li a {
+	border: 1px solid #ccc;
+	padding: 2px 10px;
+	list-style: none;
+	margin: 0;
+}
+</style>
+</head>
+
+<body>
+	<div id="main">
+		<jsp:include flush="true" page="/qiantai/top.jsp"></jsp:include>
+
+		<div id="site_content">
+			<jsp:include flush="true" page="/qiantai/right.jsp"></jsp:include>
+			<div class="content">
+				<div
+					style="width: 754px; margin-top: 1px; padding-bottom: 5px; margin-top: 5px;">
+					<div
+						style="height:26px;background:url(<%=path%>/images/guangguang.PNG);font-size: 14px;color:#de3237;">
+						<span
+							style="float: left; font-family: 微软雅黑; font-size: 14px; margin-top: 3px; margin-left: 10px;">
+							我的宠物寄养</span> <span
+							style="float: right; font-family: 微软雅黑; font-size: 14px; margin-top: 3px;">&nbsp;</span>
+					</div>
+					<div style="border: 1px solid #A9A9A9">
+						<div id="no_login" style="margin: 2px;">
+								<div style="width: 80%;margin: 0 auto;">
+								
+								<table border="1px" width="100%">
+								<thead>
+								<tr><td>单号</td><td>备注</td><td>时长（天）</td> <td>用户</td><td>状态</td>
+								<td>价格</td> <td>开始时间</td>
+								</tr>
+								</thead>
+								<tbody>
+								<c:forEach var="mc" items="${mcList }">
+								<tr>
+								<td>${mc.careId }</td>
+								<td>${mc.careDesc }</td>
+								<td>${mc.careTime }</td>
+								<td>${mc.careUserRealName }</td>
+								<td>${mc.careState eq 0?"未审核":"审核通过" }</td>
+								<td>${mc.carePrice}</td>
+								<td>${mc.careStartDate }</td>
+								</tr>
+								</c:forEach>
+								</tbody>
+								</table>
+								
+								</div>
+								
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	
+
+
+<br class="clear" />
+		<footer> <a href="<%=path%>/login.jsp">系统后台</a> </footer>
+	</div>
+</body>
+</html>
